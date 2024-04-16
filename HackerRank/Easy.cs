@@ -95,6 +95,25 @@ namespace HackerRank
             Console.WriteLine(a2);
             Console.WriteLine(a3);
         }
+        //Title: Staircase
+        //Link: https://www.hackerrank.com/challenges/staircase
+        //Tags: Problem Solving (Basic)
+        public static void staircase(int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                string result = "";
+                for (int j = 1; j < n - i; j++)
+                {
+                    result += " ";
+                }
+                for (int j = 0; j < i + 1; j++)
+                {
+                    result += "#";
+                }
+                Console.WriteLine(result);
+            }
+        }
         #endregion
     }
 }
