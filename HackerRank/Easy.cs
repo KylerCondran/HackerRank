@@ -64,6 +64,37 @@ namespace HackerRank
             }
             return sum;
         }
+        //Title: Plus Minus
+        //Link: https://www.hackerrank.com/challenges/plus-minus
+        //Tags: Problem Solving (Basic)
+        public static void plusMinus(List<int> arr)
+        {
+            int total = arr.Count();
+            int pos = 0;
+            int neg = 0;
+            int zero = 0;
+            foreach (int i in arr)
+            {
+                if (i == 0)
+                {
+                    zero++;
+                }
+                else if (i > 0)
+                {
+                    pos++;
+                }
+                else if (i < 0)
+                {
+                    neg++;
+                }
+            }
+            decimal a1 = (decimal)pos / (decimal)total;
+            decimal a2 = (decimal)neg / (decimal)total;
+            decimal a3 = (decimal)zero / (decimal)total;
+            Console.WriteLine(a1);
+            Console.WriteLine(a2);
+            Console.WriteLine(a3);
+        }
         #endregion
     }
 }
