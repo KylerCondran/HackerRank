@@ -145,6 +145,76 @@ namespace HackerRank
             }
             Console.WriteLine(min.ToString() + " " + max.ToString());
         }
+        //Title: Birthday Cake Candles
+        //Link: https://www.hackerrank.com/challenges/birthday-cake-candles
+        //Tags: Problem Solving (Basic)
+        public static int birthdayCakeCandles(List<int> candles)
+        {
+            int count = 0;
+            int max = 0;
+            max = candles.Max();
+            for (int i = 0; i < candles.Count; i++)
+            {
+                if (candles[i] == max)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+        //Title: Print the Elements of a Linked List
+        //Link: https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list
+        //Tags: Problem Solving (Basic)
+        public static void printLinkedList(SinglyLinkedListNode head)
+        {
+            while (head != null)
+            {
+                Console.WriteLine(head.data.ToString());
+                head = head.next;
+            }
+        }
+        //Title: Time Conversion
+        //Link: https://www.hackerrank.com/challenges/time-conversion
+        //Tags: Problem Solving (Basic)
+        public static string timeConversion(string s)
+        {
+            string final = "";
+            final = s;
+            if (s.Contains("AM"))
+            {
+                final = final.Replace("AM", "");
+                string start = final.Substring(0, 2);
+                int digits = 0;
+                int.TryParse(start, out digits);
+                string prefix = "";
+                if (digits == 12)
+                {
+                    prefix = "00";
+                }
+                else if (digits < 10)
+                {
+                    prefix = "0" + digits.ToString();
+                }
+                else
+                {
+                    prefix = digits.ToString();
+                }
+                final = prefix + final.Substring(2, final.Length - 2);
+            }
+            if (s.Contains("PM"))
+            {
+                final = final.Replace("PM", "");
+                string start = final.Substring(0, 2);
+                int digits = 0;
+                int.TryParse(start, out digits);
+                if (digits != 12)
+                {
+                    digits += 12;
+                }
+                final = digits.ToString() + final.Substring(2, final.Length - 2);
+            }
+            return final;
+        }
         #endregion
     }
 }
