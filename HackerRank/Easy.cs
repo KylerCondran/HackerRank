@@ -126,6 +126,25 @@ namespace HackerRank
             }
             return b;
         }
+        //Title: Mini-Max Sum
+        //Link: https://www.hackerrank.com/challenges/mini-max-sum
+        //Tags: Problem Solving (Basic)
+        public static void miniMaxSum(List<int> arr)
+        {
+            long min = 0;
+            long max = 0;
+            arr.Sort();
+            for (int i = 0; i < 4; i++)
+            {
+                min += arr[i];
+            }
+            arr.Reverse();
+            for (int i = 0; i < 4; i++)
+            {
+                max += arr[i];
+            }
+            Console.WriteLine(min.ToString() + " " + max.ToString());
+        }
         #endregion
     }
 }
