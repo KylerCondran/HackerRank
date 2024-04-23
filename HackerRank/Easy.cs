@@ -114,6 +114,18 @@ namespace HackerRank
                 Console.WriteLine(result);
             }
         }
+        //Title: Arrays - DS
+        //Link: https://www.hackerrank.com/challenges/arrays-ds
+        //Tags: Problem Solving (Basic)
+        public static List<int> reverseArray(List<int> a)
+        {
+            List<int> b = new List<int>();
+            for (int i = a.Count - 1; i >= 0; i--)
+            {
+                b.Add(a[i]);
+            }
+            return b;
+        }
         #endregion
     }
 }
